@@ -1,0 +1,21 @@
+#mbua {
+  display: flex;
+  flex-direction: row;
+}
+
+#first-column {
+  width: 35%;
+  background-color: navajowhite;
+}
+#second-column {
+  width: 30%;
+  background-color: brown;
+}
+#third-column {
+  width: 26%;
+  background-color: navajowhite;
+}
+#fourth-column {
+  width: 9%;
+  background-color: brown;
+}
