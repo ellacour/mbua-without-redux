@@ -3,13 +3,16 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import axios from "axios";
 
+import Login from "./components/login";
+import Mbua from "./components/mbua";
+
 const API_PAGES_URL = "https://cms.mbu-a.com/wp-json/wp/v2/pages/";
 const API_WORKS_URL = "https://cms.mbu-a.com/wp-json/wp/v2/work";
 const API_FEED_URL = "https://cms.mbu-a.com/wp-json/wp/v2/posts";
 const API_SUB_PAGES_URL = "https://cms.mbu-a.com/wp-json/wp/v2/pages/?parent=";
 const API_AUTHORS_URL = "https://cms.mbu-a.com/wp-json/wp/v2/users";
 
-function App() {
+const App = () => {
   const [loginPageData, setLoginPageData] = useState([]);
   const [WorksData, setWorksData] = useState([]);
   const [contactPageData, setContactPageData] = useState([]);
@@ -20,6 +23,7 @@ function App() {
   const [profileSubPageData, setProfileSubPageData] = useState([]);
   const [authors, setAuthors] = useState([]);
 
+  const loginHandler = () => setUserIsLogged(true);
   const getPageData = async (baseUrl, complement, stateHandler) => {
     const response = await axios(baseUrl + complement);
     stateHandler(response.data);
@@ -43,7 +47,9 @@ function App() {
 
   return (
     <div className="App">
-      <h1>MBUA</h1>
+      <div className="mbua-wrapper">
+        {userIsLogged ? <Mbua></Mbua> : <Login loginHandler={loginHandler}></Login> }
+      </div>
     </div>
   );
 }
