@@ -36,7 +36,7 @@ p.pad-right-125 {
 }
 
 .title {
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   font-weight: 500;
 }
 .mbua-wrapper {
@@ -56,6 +56,7 @@ p.pad-right-125 {
   flex-direction: column;
   justify-content: flex-end;
 }
+
 @media all and (min-width: 1500px) {
   .mbua-wrapper {
     width: 1400px;

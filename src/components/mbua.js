@@ -1,8 +1,13 @@
 import React, { useState, useEffect } from "react";
 
-import "./mbua.css"
+import "./mbua.css";
 
-const Mbua = props => {
+const Mbua = () => {
+  
+  // useEffect(() => {
+  //   window.history.replaceState({}, "Mbua", "/mbua");
+  // }, []);
+
   return (
     <div id="mbua">
       <div id="first-column mbua-col">welcome on mbua</div>

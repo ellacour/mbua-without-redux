@@ -1,6 +1,7 @@
-import React from "react";
+import React , { useEffect } from "react";
 import axios from "axios";
 import Skeleton from "react-loading-skeleton";
+import { Link } from 'react-router-dom';
 
 import "./loginPage.css";
 import blackPlus from "../../img/mbuA_+ Graphic_black.png";
@@ -11,17 +12,23 @@ const LOGIN_URL = "https://cms.mbu-a.com/wp-json/jwt-auth/v1/token";
 const LoginPage = props => {
   const { loginData, isLogged, userLoginHandler } = props;
 
+  useEffect(()=>{
+    if (isLogged) {
+      const plusButton = document.getElementById("plus-button");
+      plusButton.classList.add("active");}
+  },[])
+
   const LoginChangeHandler = userData => {
-    const plusButton = document.getElementById('plus-button')
+    const plusButton = document.getElementById("plus-button");
     const getToken = async () => {
       try {
         const response = await axios.post(LOGIN_URL, userData);
         const token = await response.data.token;
         const userName = await response.data.user_nicename;
-        localStorage.setItem('token', token);
-        localStorage.setItem('userName', userName);
+        localStorage.setItem("token", token);
+        localStorage.setItem("userName", userName);
         userLoginHandler(true);
-        plusButton.classList.add('active');
+        plusButton.classList.add("active");
       } catch (err) {
         alert(
           "You are not authorized to access the site. Apply for an account creation"
@@ -35,9 +42,11 @@ const LoginPage = props => {
     <div id="login">
       <div className="login-first-column mbua-col"></div>
       <div className="login-second-column mbua-col">
-        <button id="plus-button" className="login-button">
-          <img className="login-plus" src={blackPlus}></img>
-        </button>
+        <Link to="/mbua">
+          <button id="plus-button" className="login-button">
+            <img className="login-plus" src={blackPlus}></img>
+          </button>
+        </Link>
       </div>
 
       <div className="login-third-column mbua-col-end">
