@@ -10,14 +10,14 @@ import LoginPage from "./components/login/loginPage";
 import Mbua from "./components/mbua";
 
 const API_PAGES_URL = "https://cms.mbu-a.com/wp-json/wp/v2/pages/";
-const API_WORKS_URL = "https://cms.mbu-a.com/wp-json/wp/v2/work";
-const API_FEED_URL = "https://cms.mbu-a.com/wp-json/wp/v2/posts";
-const API_SUB_PAGES_URL = "https://cms.mbu-a.com/wp-json/wp/v2/pages/?parent=";
-const API_AUTHORS_URL = "https://cms.mbu-a.com/wp-json/wp/v2/users";
+// const API_WORKS_URL = "https://cms.mbu-a.com/wp-json/wp/v2/work";
+// const API_FEED_URL = "https://cms.mbu-a.com/wp-json/wp/v2/posts";
+// const API_SUB_PAGES_URL = "https://cms.mbu-a.com/wp-json/wp/v2/pages/?parent=";
+// const API_AUTHORS_URL = "https://cms.mbu-a.com/wp-json/wp/v2/users";
 
 const App = () => {
   const [loginPageData, setLoginPageData] = useState([]);
-  const [generalSlider, setGeneralSlider] = useState([]);
+  // const [generalSlider, setGeneralSlider] = useState([]);
   // const [WorksData, setWorksData] = useState([]);
   // const [contactPageData, setContactPageData] = useState([]);
   // const [feedData, setFeedData] = useState([]);
@@ -49,7 +49,7 @@ const App = () => {
     const getData = async () => {
       const response = await axios(API_PAGES_URL + 81);
       setLoginPageData(response.data.acf);
-      setGeneralSlider(response.data.acf.mbua_slide);
+      // setGeneralSlider(response.data.acf.mbua_slide);
     };
     getData();
   }, []);

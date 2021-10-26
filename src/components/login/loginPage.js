@@ -16,7 +16,7 @@ const LoginPage = props => {
     if (isLogged) {
       const plusButton = document.getElementById("plus-button");
       plusButton.classList.add("active");}
-  },[])
+  },[isLogged])
 
   const LoginChangeHandler = userData => {
     const plusButton = document.getElementById("plus-button");
@@ -44,7 +44,7 @@ const LoginPage = props => {
       <div className="login-second-column mbua-col">
         <Link to="/mbua">
           <button id="plus-button" className="login-button">
-            <img className="login-plus" src={blackPlus}></img>
+            <img className="login-plus" src={blackPlus} alt="button" ></img>
           </button>
         </Link>
       </div>
