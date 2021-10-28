@@ -9,6 +9,7 @@ const Mbua = props => {
 
   useEffect(() => {
     setCurrentSlider(mainSliderImages);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const narrowSlider = () => {

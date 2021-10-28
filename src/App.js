@@ -17,6 +17,7 @@ const API_PAGES_URL = "https://cms.mbu-a.com/wp-json/wp/v2/pages/";
 
 const App = () => {
   const [loginPageData, setLoginPageData] = useState([]);
+  // eslint-disable-next-line no-unused-vars
   const [generalSlider, setGeneralSlider] = useState([]);
   const [mbuaDataPage, setMbuaDataPage] = useState([]);
   // const [WorksData, setWorksData] = useState([]);
