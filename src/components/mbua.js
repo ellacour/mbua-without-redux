@@ -1,19 +1,37 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import "./mbua.css";
+import Slider from "./slider/slider";
 
-const Mbua = () => {
-  
-  // useEffect(() => {
-  //   window.history.replaceState({}, "Mbua", "/mbua");
-  // }, []);
+const Mbua = props => {
+  const [currentSlider, setCurrentSlider] = useState([]);
+  const { mbuaName, mbuaTitle, mainSliderImages } = props;
 
+  useEffect(() => {
+    setCurrentSlider(mainSliderImages);
+  }, []);
+
+  const narrowSlider = () => {
+    const slider = document.getElementsByClassName("slider-wrapper");
+    slider[0].classList.toggle("large-slider");
+  };
   return (
     <div id="mbua">
-      <div id="first-column mbua-col">welcome on mbua</div>
-      <div id="second-column mbua-col"></div>
-      <div id="third-column mbua-col"></div>
-      <div id="fourth-column mbua-col"></div>
+      <div id="mbua-first-column">
+        <h1 className="title ">
+          {mbuaName}
+          <span className="italic-text">{mbuaTitle}</span>
+        </h1>
+      </div>
+      <div id="mbua-second-column">
+        <div className="slider-wrapper large-slider">
+          <Slider currentSlider={currentSlider}></Slider>
+        </div>
+      </div>
+      <div id="mbua-third-column"></div>
+      <div id="mbua-fourth-column">
+        <button onClick={narrowSlider}>Narrow slider</button>
+      </div>
     </div>
   );
 };
