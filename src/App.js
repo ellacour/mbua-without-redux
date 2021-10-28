@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter , Switch, Route, Redirect } from "react-router-dom";
+import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 
 import axios from "axios";
 import "react-loading-skeleton/dist/skeleton.css";
@@ -17,7 +17,8 @@ const API_PAGES_URL = "https://cms.mbu-a.com/wp-json/wp/v2/pages/";
 
 const App = () => {
   const [loginPageData, setLoginPageData] = useState([]);
-  // const [generalSlider, setGeneralSlider] = useState([]);
+  const [generalSlider, setGeneralSlider] = useState([]);
+  const [mbuaDataPage, setMbuaDataPage] = useState([]);
   // const [WorksData, setWorksData] = useState([]);
   // const [contactPageData, setContactPageData] = useState([]);
   // const [feedData, setFeedData] = useState([]);
@@ -45,17 +46,26 @@ const App = () => {
   //   getPageData(API_AUTHORS_URL, "", setAuthors);
   // }, []);
 
+  //
   useEffect(() => {
     const getData = async () => {
       const response = await axios(API_PAGES_URL + 81);
       setLoginPageData(response.data.acf);
-      // setGeneralSlider(response.data.acf.mbua_slide);
+      setGeneralSlider(response.data.acf.mbua_slide);
+      const mbuaDataPage = {
+        mbuaName: response.data.acf.mbua_name,
+        mbuaTitle: response.data.acf.mbua_title,
+        mbuaMainSlider: response.data.acf.mbua_slide
+      };
+      setMbuaDataPage(mbuaDataPage);
     };
+
     getData();
   }, []);
 
   const PrivateRoute = props => {
-    return userIsLogged ? (
+    const token = localStorage.getItem("token");
+    return userIsLogged || token ? (
       <Route {...props} />
     ) : (
       <Redirect
@@ -70,7 +80,13 @@ const App = () => {
     return (
       <BrowserRouter>
         <Switch>
-          <PrivateRoute path="/Mbua" component={Mbua} />
+          <PrivateRoute path="/Mbua">
+            <Mbua
+              mbuaName={mbuaDataPage.mbuaName}
+              mbuaTitle={mbuaDataPage.mbuaTitle}
+              mainSliderImages={mbuaDataPage.mbuaMainSlider}
+            ></Mbua>
+          </PrivateRoute>
           <Route path="/">
             <LoginPage
               loginData={loginPageData}
