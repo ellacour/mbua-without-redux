@@ -18,7 +18,7 @@ const API_PAGES_URL = "https://cms.mbu-a.com/wp-json/wp/v2/pages/";
 const App = () => {
   const [loginPageData, setLoginPageData] = useState([]);
   // eslint-disable-next-line no-unused-vars
-  const [generalSlider, setGeneralSlider] = useState([]);
+  const [currentSlider, setCurrentSlider] = useState([]);
   const [mbuaDataPage, setMbuaDataPage] = useState([]);
   // const [WorksData, setWorksData] = useState([]);
   // const [contactPageData, setContactPageData] = useState([]);
@@ -52,11 +52,10 @@ const App = () => {
     const getData = async () => {
       const response = await axios(API_PAGES_URL + 81);
       setLoginPageData(response.data.acf);
-      setGeneralSlider(response.data.acf.mbua_slide);
+      setCurrentSlider(response.data.acf.mbua_slide);
       const mbuaDataPage = {
         mbuaName: response.data.acf.mbua_name,
         mbuaTitle: response.data.acf.mbua_title,
-        mbuaMainSlider: response.data.acf.mbua_slide
       };
       setMbuaDataPage(mbuaDataPage);
     };
@@ -85,7 +84,7 @@ const App = () => {
             <Mbua
               mbuaName={mbuaDataPage.mbuaName}
               mbuaTitle={mbuaDataPage.mbuaTitle}
-              mainSliderImages={mbuaDataPage.mbuaMainSlider}
+              sliderImages={currentSlider}
             ></Mbua>
           </PrivateRoute>
           <Route path="/">

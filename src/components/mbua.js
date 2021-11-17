@@ -5,12 +5,11 @@ import Slider from "./slider/slider";
 
 const Mbua = props => {
   const [currentSlider, setCurrentSlider] = useState([]);
-  const { mbuaName, mbuaTitle, mainSliderImages } = props;
+  const { mbuaName, mbuaTitle, sliderImages } = props;
 
   useEffect(() => {
-    setCurrentSlider(mainSliderImages);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+    setCurrentSlider(sliderImages);
+  }, [sliderImages]);
 
   const narrowSlider = () => {
     const slider = document.getElementsByClassName("slider-wrapper");
