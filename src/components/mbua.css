@@ -22,4 +22,7 @@
 }
 #mbua-fourth-column {
   width: 125px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
