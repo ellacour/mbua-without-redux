@@ -1,13 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import Slider from "react-slick";
 import "./slick.css";
 import "./slick-theme.css";
 import "./mbuaSlider.css";
 
 const MbuaSlider = props => {
-
-  const [currentPage, setCurrentPage] = useState(props.currentPage);
-  
+  const { currentPage } = props;
+  const sliderImg = props.currentSlider;
 
   const settings = {
     fade: true,
@@ -20,10 +19,12 @@ const MbuaSlider = props => {
     cssEase: "linear"
   };
 
-  const sliderImg = props.currentSlider;
+  const toggleSlider = () => {
+    const slider = document.getElementsByClassName("slider-wrapper");
+    slider[0].classList.toggle("large-slider");
+  };
 
   const sliders = () => {
-    console.log(currentPage);
     return sliderImg.map(data => {
       return (
         <div
@@ -42,7 +43,12 @@ const MbuaSlider = props => {
   };
 
   return sliderImg ? (
-    <Slider {...settings}>{sliders()}</Slider>
+    <div>
+      { currentPage !== "mbuA" && <button className="slider-toggle-button" onClick={toggleSlider}>
+        Toggle slider
+      </button>}
+      <Slider {...settings}>{sliders()}</Slider>
+    </div>
   ) : (
     <div>please wait</div>
   );

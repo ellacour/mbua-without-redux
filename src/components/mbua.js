@@ -46,8 +46,3 @@ const Mbua = props => {
 };
 
 export default Mbua;
-
- // const narrowSlider = () => {
-  //   const slider = document.getElementsByClassName("slider-wrapper");
-  //   slider[0].classList.toggle("large-slider");
-  // };

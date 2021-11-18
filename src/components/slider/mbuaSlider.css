@@ -8,6 +8,13 @@
   border-radius: 2px;
   overflow: hidden;
 }
+.slider-toggle-button{
+  z-index: 200000;
+  position: absolute;
+  left: 5px;
+  bottom: 5px;
+
+}
 .slider-wrapper.large-slider {
   width: 800px;
 }
