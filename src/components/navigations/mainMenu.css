@@ -1,0 +1,18 @@
+#main-menu > #main-menu-items{
+    text-align: left;
+    padding-inline-start: 0px;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+}
+#main-menu li {
+    list-style: none;
+    padding-left: 25px;
+}
+
+#main-menu .main-menu-item a{
+    color:rgb(204,204,204);
+    text-decoration: none;
+}
+#main-menu .main-menu-item.active a{
+    color:rgb(77, 77, 77);
+}

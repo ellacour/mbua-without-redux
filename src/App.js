@@ -20,6 +20,7 @@ const App = () => {
   // eslint-disable-next-line no-unused-vars
   const [currentSlider, setCurrentSlider] = useState([]);
   const [mbuaDataPage, setMbuaDataPage] = useState([]);
+  const [menuItems, setMenuItems] = useState([]);
   // const [WorksData, setWorksData] = useState([]);
   // const [contactPageData, setContactPageData] = useState([]);
   // const [feedData, setFeedData] = useState([]);
@@ -48,19 +49,49 @@ const App = () => {
   // }, []);
 
   //
+  // useEffect(() => {
+  //   const getData = async () => {
+  //     const response = await axios(API_PAGES_URL + 81);
+  //     setLoginPageData(response.data.acf);
+  //     setCurrentSlider(response.data.acf.mbua_slide);
+  //     const mbuaDataPage = {
+  //       mbuaName: response.data.acf.mbua_name,
+  //       mbuaTitle: response.data.acf.mbua_title
+  //     };
+  //     setMbuaDataPage(mbuaDataPage);
+  //   };
+
+  //   getData();
+  // }, []);
+
   useEffect(() => {
+    let unmounted = false;
+    const getMenuItems = async () => {
+      const response = await axios(
+        "https://cms.mbu-a.com/wp-json/myroutes/menu"
+      );
+      if (!unmounted) {
+        setMenuItems(response.data);
+      }
+    };
+
     const getData = async () => {
       const response = await axios(API_PAGES_URL + 81);
-      setLoginPageData(response.data.acf);
-      setCurrentSlider(response.data.acf.mbua_slide);
-      const mbuaDataPage = {
-        mbuaName: response.data.acf.mbua_name,
-        mbuaTitle: response.data.acf.mbua_title,
-      };
-      setMbuaDataPage(mbuaDataPage);
+      if (!unmounted) {
+        setLoginPageData(response.data.acf);
+        setCurrentSlider(response.data.acf.mbua_slide);
+        const mbuaDataPage = {
+          mbuaName: response.data.acf.mbua_name,
+          mbuaTitle: response.data.acf.mbua_title
+        };
+        setMbuaDataPage(mbuaDataPage);
+      }
     };
 
     getData();
+    getMenuItems();
+
+    return () => (unmounted = true);
   }, []);
 
   const PrivateRoute = props => {
@@ -85,6 +116,7 @@ const App = () => {
               mbuaName={mbuaDataPage.mbuaName}
               mbuaTitle={mbuaDataPage.mbuaTitle}
               sliderImages={currentSlider}
+              menuItems={menuItems}
             ></Mbua>
           </PrivateRoute>
           <Route path="/">
