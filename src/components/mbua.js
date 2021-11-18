@@ -1,27 +1,26 @@
 import React, { useState, useEffect } from "react";
 
-
 import "./mbua.css";
 import MbuaSlider from "./slider/mbuaSlider";
 import Menu from "./navigations/mainMenu";
-
+import InnerPagesRoutes from "./innerpages/innerPagesRoutes";
 
 const Mbua = props => {
   const [currentSlider, setCurrentSlider] = useState([]);
   const [currentPage, setCurrentPage] = useState("");
   const { mbuaName, mbuaTitle, sliderImages, menuItems } = props;
- 
-  useEffect(()=>{
-    setCurrentPage("mbuA")
-  },[]);
+
+  useEffect(() => {
+    setCurrentPage("mbuA");
+  }, []);
 
   useEffect(() => {
     setCurrentSlider(sliderImages);
   }, [sliderImages]);
- 
-  const getCurrentPage = (page)=>{
+
+  const getCurrentPage = page => {
     setCurrentPage(page);
-  }
+  };
 
   return (
     <div id="mbua">
@@ -32,14 +31,25 @@ const Mbua = props => {
         </h1>
       </div>
       <div id="mbua-second-column">
-        <div className={`slider-wrapper ${currentPage === "mbuA" &&
-                "large-slider"}`}>
-          <MbuaSlider currentSlider={currentSlider} currentPage={currentPage}></MbuaSlider>
+        <div
+          className={`slider-wrapper ${currentPage === "mbuA" &&
+            "large-slider"}`}
+        >
+          <MbuaSlider
+            currentSlider={currentSlider}
+            currentPage={currentPage}
+          ></MbuaSlider>
         </div>
       </div>
-      <div id="mbua-third-column"></div>
+      <div id="mbua-third-column">
+        <InnerPagesRoutes></InnerPagesRoutes>
+      </div>
       <div id="mbua-fourth-column">
-        <Menu menuItems={menuItems} currentPage={currentPage} getCurrentPage={getCurrentPage}></Menu>
+        <Menu
+          menuItems={menuItems}
+          currentPage={currentPage}
+          getCurrentPage={getCurrentPage}
+        ></Menu>
       </div>
     </div>
   );
