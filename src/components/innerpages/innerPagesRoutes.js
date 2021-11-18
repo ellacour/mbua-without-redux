@@ -2,34 +2,38 @@ import React from "react";
 import {
   Switch,
   Route,
-  useParams,
   useRouteMatch
 } from "react-router-dom";
+
+import Works from './parentPages/works';
+import Profiles from './parentPages/profiles';
+import Contact from './simplePages/contact';
+import Feed from './simplePages/feed';
+import Ftp from './simplePages/ftp';
 
 const InnerPagesRoutes = () => {
   let { path } = useRouteMatch();
   return (
     <div>
       <Switch>
-        <Route exact path={path}>
-          <h3>Please select a topic.</h3>
+        <Route path={`${path}/work`}>
+          <Works />
         </Route>
-        <Route path={`${path}/:topicId`}>
-          <Topic />
+        <Route path={`${path}/profile`}>
+          <Profiles />
+        </Route>
+        <Route path={`${path}/contact`}>
+          <Contact />
+        </Route>
+        <Route path={`${path}/feed`}>
+          <Feed />
+        </Route>
+        <Route path={`${path}/ftp`}>
+          <Ftp />
         </Route>
       </Switch>
     </div>
   );
-
-  function Topic() {
-    let { topicId } = useParams();
-
-    return (
-      <div>
-        <h3>{topicId}</h3>
-      </div>
-    );
-  }
 };
 
 export default InnerPagesRoutes;
