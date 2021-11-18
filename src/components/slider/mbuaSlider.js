@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import Slider from "react-slick";
 import "./slick.css";
 import "./slick-theme.css";
-import "./slider.css";
+import "./mbuaSlider.css";
 
 const MbuaSlider = props => {
+
+  const [currentPage, setCurrentPage] = useState(props.currentPage);
+  
+
   const settings = {
     fade: true,
     slidesToShow: 1,
@@ -19,9 +23,14 @@ const MbuaSlider = props => {
   const sliderImg = props.currentSlider;
 
   const sliders = () => {
+    console.log(currentPage);
     return sliderImg.map(data => {
       return (
-        <div className="mbua-slider-img-wrapper largeSlider" key={data.ID}>
+        <div
+          className={`mbua-slider-img-wrapper ${currentPage === "mbuA" &&
+            "largeSlider currentPage"}`}
+          key={data.ID}
+        >
           <img
             alt={data.title}
             src={data.sizes.large}
