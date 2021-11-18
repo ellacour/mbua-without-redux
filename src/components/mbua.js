@@ -2,24 +2,23 @@ import React, { useState, useEffect } from "react";
 
 
 import "./mbua.css";
-import Slider from "./slider/slider";
+import MbuaSlider from "./slider/mbuaSlider";
 import Menu from "./navigations/mainMenu";
+
 
 const Mbua = props => {
   const [currentSlider, setCurrentSlider] = useState([]);
-  const [currentPage, setCurrentPage] = useState("mbuA");
+  const [currentPage, setCurrentPage] = useState("");
   const { mbuaName, mbuaTitle, sliderImages, menuItems } = props;
  
+  useEffect(()=>{
+    setCurrentPage("mbuA")
+  },[]);
 
   useEffect(() => {
     setCurrentSlider(sliderImages);
   }, [sliderImages]);
  
-  
-  // const narrowSlider = () => {
-  //   const slider = document.getElementsByClassName("slider-wrapper");
-  //   slider[0].classList.toggle("large-slider");
-  // };
   const getCurrentPage = (page)=>{
     setCurrentPage(page);
   }
@@ -33,8 +32,9 @@ const Mbua = props => {
         </h1>
       </div>
       <div id="mbua-second-column">
-        <div className="slider-wrapper large-slider">
-          <Slider currentSlider={currentSlider}></Slider>
+        <div className={`slider-wrapper ${currentPage === "mbuA" &&
+                "large-slider"}`}>
+          <MbuaSlider currentSlider={currentSlider} currentPage={currentPage}></MbuaSlider>
         </div>
       </div>
       <div id="mbua-third-column"></div>
@@ -46,3 +46,8 @@ const Mbua = props => {
 };
 
 export default Mbua;
+
+ // const narrowSlider = () => {
+  //   const slider = document.getElementsByClassName("slider-wrapper");
+  //   slider[0].classList.toggle("large-slider");
+  // };
