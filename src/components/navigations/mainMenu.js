@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import "./mainMenu.css";
 
 const Menu = props => {
-  const { menuItems, currentPage, getCurrentPage} = props;
+  const { menuItems, currentPage, getCurrentPage, setCurrentSlider, mbuaSliderImages} = props;
  
 
   const AUTHORISED = ["mbuA", "work", "profile", "feed", "contact", "ftp"];
@@ -15,6 +15,10 @@ const Menu = props => {
     getCurrentPage(page);
   };
 
+  const mbuAMenuClickHandler = (page)=>{
+    getCurrentPage(page);
+    setCurrentSlider(mbuaSliderImages);
+  }
 
   if (menuItems.length > 0) {
     const filteredMenuItems = menuItems.filter(menuItem =>
@@ -32,7 +36,7 @@ const Menu = props => {
             >
               <Link
                 to={`/mbua`}
-                onClick={()=> menuClicksHandler(menuItem.title)}
+                onClick={()=> mbuAMenuClickHandler(menuItem.title)}
                 className="main-menu-link"
               >
                 {menuItem.title}

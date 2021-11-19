@@ -8,18 +8,23 @@ import InnerPagesRoutes from "./innerpages/innerPagesRoutes";
 const Mbua = props => {
   const [currentSlider, setCurrentSlider] = useState([]);
   const [currentPage, setCurrentPage] = useState("");
-  const { mbuaName, mbuaTitle, sliderImages, menuItems } = props;
+  const { mbuaName, mbuaTitle, mbuaSliderImages, menuItems } = props;
+  const [currentWork, setCurrentWork] = useState([]);
 
   useEffect(() => {
     setCurrentPage("mbuA");
   }, []);
 
   useEffect(() => {
-    setCurrentSlider(sliderImages);
-  }, [sliderImages]);
+    setCurrentSlider(mbuaSliderImages);
+  }, [mbuaSliderImages]);
 
   const getCurrentPage = page => {
     setCurrentPage(page);
+  };
+
+  const getCurrentWork = work => {
+    setCurrentWork(work);
   };
 
   return (
@@ -42,13 +47,15 @@ const Mbua = props => {
         </div>
       </div>
       <div id="mbua-third-column">
-        <InnerPagesRoutes></InnerPagesRoutes>
+        <InnerPagesRoutes getCurrentWork={getCurrentWork} currentWork={currentWork} setCurrentSlider={setCurrentSlider}></InnerPagesRoutes>
       </div>
       <div id="mbua-fourth-column">
         <Menu
           menuItems={menuItems}
           currentPage={currentPage}
           getCurrentPage={getCurrentPage}
+          setCurrentSlider={setCurrentSlider}
+          mbuaSliderImages={mbuaSliderImages}
         ></Menu>
       </div>
     </div>

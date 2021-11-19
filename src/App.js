@@ -115,7 +115,7 @@ const App = () => {
             <Mbua
               mbuaName={mbuaDataPage.mbuaName}
               mbuaTitle={mbuaDataPage.mbuaTitle}
-              sliderImages={currentSlider}
+              mbuaSliderImages={currentSlider}
               menuItems={menuItems}
             ></Mbua>
           </PrivateRoute>
