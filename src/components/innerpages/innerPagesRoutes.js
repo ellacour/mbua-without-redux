@@ -1,6 +1,7 @@
 import React from "react";
 import { Switch, Route, useRouteMatch } from "react-router-dom";
 
+import "./innerPagesRoutes.css"
 import Works from "./parentPages/works";
 import Profiles from "./parentPages/profiles";
 import Contact from "./simplePages/contact";
@@ -12,7 +13,7 @@ const InnerPagesRoutes = props => {
   const { getCurrentWork, currentWork, setCurrentSlider } = props;
 
   return (
-    <div>
+    <div Id="PagesWrapper">
       <Switch>
         <Route path={`${path}/work`}>
           <Works

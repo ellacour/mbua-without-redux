@@ -1,0 +1,16 @@
+#Profiles img {
+  width: 100%;
+  height: auto;
+}
+#Profiles figure {
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+}
+
+#Profiles {
+    text-align: left;
+    height: 100%;
+    overflow-y: scroll;
+}

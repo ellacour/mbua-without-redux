@@ -1,3 +1,5 @@
-.work-content{
+#Works {
     text-align: left;
+    height: 100%;
+    overflow-y: scroll;
 }

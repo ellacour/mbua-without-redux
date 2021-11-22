@@ -3,8 +3,8 @@ import { Link, useRouteMatch } from "react-router-dom";
 
 const WorksMenu = props => {
   const { worksListing, getCurrentWorkContent } = props;
-
   let { url } = useRouteMatch();
+  
   return (
     <ul id="works-listing">
       {worksListing.map(work => {
