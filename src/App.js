@@ -21,8 +21,7 @@ const App = () => {
   const [currentSlider, setCurrentSlider] = useState([]);
   const [mbuaDataPage, setMbuaDataPage] = useState([]);
   const [menuItems, setMenuItems] = useState([]);
-  // const [WorksData, setWorksData] = useState([]);
-  // const [contactPageData, setContactPageData] = useState([]);
+
   // const [feedData, setFeedData] = useState([]);
   // const [ftpPageData, setFtpPageData] = useState([]);
   const [userIsLogged, setUserIsLogged] = useState(false);
@@ -46,22 +45,6 @@ const App = () => {
   //   getPageData(API_PAGES_URL, 1457, setProfilePageData);
   //   getPageData(API_SUB_PAGES_URL, 1457, setProfileSubPageData);
   //   getPageData(API_AUTHORS_URL, "", setAuthors);
-  // }, []);
-
-  //
-  // useEffect(() => {
-  //   const getData = async () => {
-  //     const response = await axios(API_PAGES_URL + 81);
-  //     setLoginPageData(response.data.acf);
-  //     setCurrentSlider(response.data.acf.mbua_slide);
-  //     const mbuaDataPage = {
-  //       mbuaName: response.data.acf.mbua_name,
-  //       mbuaTitle: response.data.acf.mbua_title
-  //     };
-  //     setMbuaDataPage(mbuaDataPage);
-  //   };
-
-  //   getData();
   // }, []);
 
   useEffect(() => {
