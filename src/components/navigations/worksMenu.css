@@ -1,0 +1,14 @@
+li.works-menu{
+    list-style: none;
+    line-height: 20px;
+    font-style: italic;
+}
+
+li.works-menu a {
+    text-decoration: none;
+    color:rgb(77, 77, 77);
+}
+
+li.protected.works-menu{
+    color:rgb(204,204,204);
+}

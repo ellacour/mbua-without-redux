@@ -6,27 +6,27 @@ const WorksMenu = props => {
 
   let { url } = useRouteMatch();
   return (
-    <ul id="works-listiing">
+    <ul id="works-listing">
       {worksListing.map(work => {
         if (work.acf.project_is_accessible) {
           return (
-            <li className="work-menu" key={work.id}>
+            <li className="works-menu" key={work.id}>
               <Link
                 to={`${url}/${work.slug}`}
                 onClick={() => getCurrentWorkContent(work)}
               >
-                <h5>{work.title.rendered}</h5>
+                {work.title.rendered}
               </Link>
             </li>
           );
         } else
           return (
             <li
-              className="protected work-menu"
+              className="protected works-menu"
               key={work.id}
               onClick={() => false}
             >
-              <h5>{work.title.rendered}</h5>
+              {work.title.rendered}
             </li>
           );
       })}

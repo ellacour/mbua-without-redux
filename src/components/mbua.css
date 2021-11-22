@@ -19,6 +19,9 @@
 
 #mbua-third-column {
   width: 400px;
+  display: flex;
+  flex-direction: column;
+  padding: 25px 25px 0px 50px;
 }
 #mbua-fourth-column {
   width: 125px;
