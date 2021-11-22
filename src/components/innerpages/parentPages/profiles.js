@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useRouteMatch } from "react-router-dom";
+
 
 import "./profiles.css"
 import ProfilesMenu from "../../navigations/profilesMenu";
@@ -8,7 +8,7 @@ import ProfilesMenu from "../../navigations/profilesMenu";
 const Profiles = () => {
   const [profilesListing, setProfilesListing] = useState([]);
   const [currentProfileContent, setCurrentProfileContent] = useState("");
-  let { path } = useRouteMatch();
+
 
   useEffect(() => {
     let unmounted = false;
