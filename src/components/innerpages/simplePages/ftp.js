@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
+import "./ftp.css"
+
 const Ftp = () => {
   const [ftpContent, setFtpContent] = useState("");
   const [ftpIcons, setFtpIcons] = useState([]);
@@ -22,7 +24,7 @@ const Ftp = () => {
 
   const displayFtpIcons = () => {
     return (
-      <ul>
+      <ul id="Ftp-list">
         {ftpIcons.map(icon => {
           return (
             <li key={icon.ftp_logo.id}>

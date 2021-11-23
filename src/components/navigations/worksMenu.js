@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, useRouteMatch } from "react-router-dom";
+import "./worksMenu.css"
 
 const WorksMenu = props => {
   const { worksListing, getCurrentWorkContent } = props;
