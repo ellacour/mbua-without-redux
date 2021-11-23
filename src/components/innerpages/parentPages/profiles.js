@@ -7,7 +7,7 @@ import ProfilesMenu from "../../navigations/profilesMenu";
 
 const Profiles = () => {
   const [profilesListing, setProfilesListing] = useState([]);
-  const [currentProfileContent, setCurrentProfileContent] = useState("");
+  const [currentProfile, setCurrentProfile] = useState("");
 
 
   useEffect(() => {
@@ -19,7 +19,7 @@ const Profiles = () => {
       if (!unmounted) {
         setProfilesListing(response.data);
         console.log(response.data)
-        setCurrentProfileContent(response.data[0].content.rendered);
+        getCurrentProfileContent(response.data[0]);
       }
     };
     getProfilesListing();
@@ -28,17 +28,22 @@ const Profiles = () => {
 
   const getCurrentProfileContent = content => {
     if (content) {
-      const profileContent = content.content.rendered;
-      setCurrentProfileContent(profileContent);
+      const currentProfile = {
+        slug:content.slug,
+        content:content.content.rendered,
+        title:content.title.rendered
+      }
+      setCurrentProfile(currentProfile);
     }
   };
 
   return (
     <div id="Profiles">
-      <div dangerouslySetInnerHTML={{ __html: currentProfileContent }} />
+      <div className="profile-content" dangerouslySetInnerHTML={{ __html: currentProfile.content }} />
       <ProfilesMenu
         profilesListing={profilesListing}
         getCurrentProfileContent={getCurrentProfileContent}
+        currentProfile={currentProfile}
       ></ProfilesMenu>
     </div>
   );
