@@ -18,7 +18,6 @@ const Profiles = () => {
       );
       if (!unmounted) {
         setProfilesListing(response.data);
-        console.log(response.data)
         getCurrentProfileContent(response.data[0]);
       }
     };

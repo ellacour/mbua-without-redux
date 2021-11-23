@@ -13,7 +13,7 @@ const InnerPagesRoutes = props => {
   const { getCurrentWork, currentWork, setCurrentSlider } = props;
 
   return (
-    <div Id="PagesWrapper">
+    <div id="PagesWrapper">
       <Switch>
         <Route path={`${path}/work`}>
           <Works
