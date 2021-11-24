@@ -7,9 +7,9 @@ import Work from "../simplePages/work";
 import WorksMenu from "../../navigations/worksMenu";
 
 const Works = props => {
-  const { setCurrentSlider } = props;
+  const { setCurrentSlider, setCurrentWorkContent, currentWorkContent } = props;
   const [worksListing, setWorksListing] = useState([]);
-  const [currentWorkContent, setCurrentWorkContent] = useState("");
+  // const [currentWorkContent, setCurrentWorkContent] = useState("");
   let { path } = useRouteMatch();
 
   useEffect(() => {
@@ -29,7 +29,8 @@ const Works = props => {
       const workContent = {
         title: content.title.rendered,
         photos: content.acf.photos,
-        text: content.content.rendered
+        text: content.content.rendered,
+        slug: content.slug,
       };
       setCurrentWorkContent(workContent);
       setCurrentSlider(content.acf.photos);

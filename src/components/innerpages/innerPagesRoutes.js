@@ -10,16 +10,18 @@ import Ftp from "./simplePages/ftp";
 
 const InnerPagesRoutes = props => {
   let { path } = useRouteMatch();
-  const { getCurrentWork, currentWork, setCurrentSlider } = props;
+  // const { getCurrentWork, currentWork, setCurrentSlider } = props;
+  const { setCurrentSlider, currentWorkContent, setCurrentWorkContent } = props;
+
 
   return (
     <div id="PagesWrapper">
       <Switch>
         <Route path={`${path}/work`}>
           <Works
-            getCurrentWork={getCurrentWork}
-            currentWork={currentWork}
-            setCurrentSlider={setCurrentSlider}
+          setCurrentWorkContent={setCurrentWorkContent}
+          currentWorkContent = {currentWorkContent}
+          setCurrentSlider={setCurrentSlider}
           />
         </Route>
         <Route path={`${path}/profile`}>

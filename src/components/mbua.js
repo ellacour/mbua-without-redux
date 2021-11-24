@@ -3,13 +3,14 @@ import React, { useState, useEffect } from "react";
 import "./mbua.css";
 import MbuaSlider from "./slider/mbuaSlider";
 import Menu from "./navigations/mainMenu";
+import SliderButtons from "./navigations/sliderButtons";
 import InnerPagesRoutes from "./innerpages/innerPagesRoutes";
 
 const Mbua = props => {
   const [currentSlider, setCurrentSlider] = useState([]);
   const [currentPage, setCurrentPage] = useState("");
   const { mbuaName, mbuaTitle, mbuaSliderImages, menuItems } = props;
-  const [currentWork, setCurrentWork] = useState([]);
+  const [currentWork, setCurrentWork] = useState("");
 
   useEffect(() => {
     setCurrentPage("mbuA");
@@ -34,6 +35,7 @@ const Mbua = props => {
           {mbuaName}
           <span className="italic-text">{mbuaTitle}</span>
         </h1>
+        <SliderButtons currentPage={currentPage} currentWork={currentWork} />
       </div>
       <div id="mbua-second-column">
         <div
@@ -47,7 +49,12 @@ const Mbua = props => {
         </div>
       </div>
       <div id="mbua-third-column">
-        <InnerPagesRoutes getCurrentWork={getCurrentWork} currentWork={currentWork} setCurrentSlider={setCurrentSlider}></InnerPagesRoutes>
+        {/* <InnerPagesRoutes getCurrentWork={getCurrentWork} currentWork={currentWork} setCurrentSlider={setCurrentSlider}></InnerPagesRoutes> */}
+        <InnerPagesRoutes
+          setCurrentSlider={setCurrentSlider}
+          setCurrentWorkContent={getCurrentWork}
+          currentWorkContent={currentWork}
+        ></InnerPagesRoutes>
       </div>
       <div id="mbua-fourth-column">
         <Menu

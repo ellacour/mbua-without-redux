@@ -1,5 +1,7 @@
 import React from "react";
 import Slider from "react-slick";
+
+
 import "./slick.css";
 import "./slick-theme.css";
 import "./mbuaSlider.css";
@@ -17,11 +19,6 @@ const MbuaSlider = props => {
     speed: 1000,
     autoplaySpeed: 4000,
     cssEase: "linear"
-  };
-
-  const toggleSlider = () => {
-    const slider = document.getElementsByClassName("slider-wrapper");
-    slider[0].classList.toggle("large-slider");
   };
 
   const sliders = () => {
@@ -44,9 +41,6 @@ const MbuaSlider = props => {
 
   return sliderImg ? (
     <div>
-      { currentPage !== "mbuA" && <button className="slider-toggle-button" onClick={toggleSlider}>
-        Toggle slider
-      </button>}
       <Slider {...settings}>{sliders()}</Slider>
     </div>
   ) : (
