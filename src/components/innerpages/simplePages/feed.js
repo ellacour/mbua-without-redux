@@ -6,6 +6,7 @@ import PaginatedItems from "../../feed-pagination/PaginatedItems";
 
 const Feed = () => {
   const [feedData, setFeedData] = useState([]);
+  // eslint-disable-next-line
   const [authors, setAuthors] = useState([]);
   const [currentFeed, setCurrentFeed] = useState([]);
 

@@ -1,5 +1,7 @@
 import React, { useState } from "react";
+
 import "./loginForm.css";
+import Wrapper from "../helpers/wrapper"
 
 
 const LoginForm = props => {
@@ -26,7 +28,7 @@ const LoginForm = props => {
   }
 
   return (
-    <div>
+    <Wrapper>
       <form id="Login-form" onSubmit={submitHandler}>
         <label className="">
           Username :
@@ -52,7 +54,7 @@ const LoginForm = props => {
           Login
         </button>
       </form>
-    </div>
+    </Wrapper>
   );
 };
 
