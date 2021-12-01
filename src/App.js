@@ -20,32 +20,11 @@ const App = () => {
   // eslint-disable-next-line no-unused-vars
   const [currentSlider, setCurrentSlider] = useState([]);
   const [mbuaDataPage, setMbuaDataPage] = useState([]);
-  const [menuItems, setMenuItems] = useState([]);
-
-  // const [feedData, setFeedData] = useState([]);
-  // const [ftpPageData, setFtpPageData] = useState([]);
+  const [menuItems, setMenuItems] = useState([]); 
   const [userIsLogged, setUserIsLogged] = useState(false);
-  // const [profilePageData, setProfilePageData] = useState([]);
-  // const [profileSubPageData, setProfileSubPageData] = useState([]);
-  // const [authors, setAuthors] = useState([]);
+  
+  
 
-  // const loginHandler = () => setUserIsLogged(true);
-
-  // const getPageData = async (baseUrl, complement, stateHandler) => {
-  //   const response = await axios(baseUrl + complement);
-  //   stateHandler(response.data);
-  // };
-
-  // useEffect(() => {
-  //   getPageData(API_PAGES_URL, 81, setLoginPageData);
-  //   getPageData(API_PAGES_URL, 75, setContactPageData);
-  //   getPageData(API_WORKS_URL, "", setWorksData);
-  //   getPageData(API_FEED_URL, "", setFeedData);
-  //   getPageData(API_PAGES_URL, 77, setFtpPageData);
-  //   getPageData(API_PAGES_URL, 1457, setProfilePageData);
-  //   getPageData(API_SUB_PAGES_URL, 1457, setProfileSubPageData);
-  //   getPageData(API_AUTHORS_URL, "", setAuthors);
-  // }, []);
 
   useEffect(() => {
     let unmounted = false;
