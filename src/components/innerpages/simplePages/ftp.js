@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Fragment } from "react";
 import axios from "axios";
 
 import "./ftp.css"
-import Wrapper from "../../helpers/wrapper";
 
 const Ftp = () => {
   const [ftpContent, setFtpContent] = useState("");
@@ -44,13 +43,13 @@ const Ftp = () => {
   };
 
   return (
-    <Wrapper>
+    <Fragment>
       <div>{displayFtpIcons()}</div>
       <div
         className="ftp-content"
         dangerouslySetInnerHTML={{ __html: ftpContent }}
       />
-    </Wrapper>
+    </Fragment>
   );
 };
 

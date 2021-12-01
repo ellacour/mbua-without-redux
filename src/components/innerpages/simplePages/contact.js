@@ -1,7 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Fragment } from "react";
 import axios from "axios";
-
-import Wrapper from "../../helpers/wrapper";
 
 const Contact = () => {
   const [contactContent, setContactContent] = useState("");
@@ -21,14 +19,14 @@ const Contact = () => {
   }, []);
 
   return (
-    <Wrapper>
+    <Fragment>
       <h3>Contact</h3>
       <div>Map</div>
       <div
         className="contact-content"
         dangerouslySetInnerHTML={{ __html: contactContent }}
       />
-    </Wrapper>
+    </Fragment>
   );
 };
 

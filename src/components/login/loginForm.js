@@ -1,8 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, Fragment } from "react";
 
 import "./loginForm.css";
-import Wrapper from "../helpers/wrapper"
-
 
 const LoginForm = props => {
   const [userName, setUserName] = useState("");
@@ -28,7 +26,7 @@ const LoginForm = props => {
   }
 
   return (
-    <Wrapper>
+    <Fragment>
       <form id="Login-form" onSubmit={submitHandler}>
         <label className="">
           Username :
@@ -54,7 +52,7 @@ const LoginForm = props => {
           Login
         </button>
       </form>
-    </Wrapper>
+    </Fragment>
   );
 };
 
