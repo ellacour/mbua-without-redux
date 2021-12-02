@@ -11,8 +11,8 @@ const ProfilesMenu = props => {
     <ul id="ProfilesMenu">
       {profilesListing.map(profile => {
         return (
-          <li key={profile.id} className={currentProfile.slug === profile.slug &&
-            "active"}>
+          <li key={profile.id} className={currentProfile.slug === profile.slug ?
+            "active" : ""}>
             <Link
               to={`${url}/${profile.slug}`}
               onClick={() => getCurrentProfileContent(profile)}
