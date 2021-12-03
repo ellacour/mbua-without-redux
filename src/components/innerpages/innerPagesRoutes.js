@@ -5,7 +5,7 @@ import "./innerPagesRoutes.css"
 import Works from "./parentPages/works";
 import Profiles from "./parentPages/profiles";
 import Contact from "./simplePages/contact";
-import Feed from "./simplePages/feed";
+import Feed from "../feed/feed";
 import Ftp from "./simplePages/ftp";
 
 const InnerPagesRoutes = props => {
@@ -31,7 +31,7 @@ const InnerPagesRoutes = props => {
           <Contact />
         </Route>
         <Route path={`${path}/feed`}>
-          <Feed />
+          <Feed itemsPerPage={3} />
         </Route>
         <Route path={`${path}/ftp`}>
           <Ftp />
