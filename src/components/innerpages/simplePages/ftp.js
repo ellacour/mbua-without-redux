@@ -1,7 +1,8 @@
 import React, { useState, useEffect, Fragment } from "react";
 import axios from "axios";
+import Skeleton from "react-loading-skeleton";
 
-import "./ftp.css"
+import "./ftp.css";
 
 const Ftp = () => {
   const [ftpContent, setFtpContent] = useState("");
@@ -20,12 +21,12 @@ const Ftp = () => {
     };
     getFtpData();
     return () => (unmounted = true);
-  },[]);
+  }, []);
 
-  const displayFtpIcons = (ftpIcons) => {
+  const displayFtpIcons = iconsList => {
     return (
       <ul id="Ftp-list">
-        {ftpIcons.map(icon => {
+        {iconsList.map(icon => {
           return (
             <li key={icon.ftp_logo.id}>
               <a href={icon.ftp_link}>
@@ -45,10 +46,12 @@ const Ftp = () => {
   return (
     <Fragment>
       {ftpIcons && displayFtpIcons(ftpIcons)}
-      <div
-        className="ftp-content"
-        dangerouslySetInnerHTML={{ __html: ftpContent }}
-      />
+      {ftpContent ? (
+        <div
+          className="ftp-content"
+          dangerouslySetInnerHTML={{ __html: ftpContent }}
+        />
+      ):(<Skeleton count={5}/>)}
     </Fragment>
   );
 };
