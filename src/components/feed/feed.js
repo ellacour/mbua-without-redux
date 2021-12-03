@@ -33,22 +33,6 @@ const Feed = props => {
 
   }, [itemOffset, itemsPerPage]);
   
-  const displayPost = feedPosts => {
-    return (
-      <div>
-        {feedPosts &&
-          feedPosts.map(post => (
-            <div key={post.id}>
-              <h3>{post.title.rendered}</h3>
-              <div dangerouslySetInnerHTML={{ __html: post.content.rendered }} />
-            </div>
-          ))}
-        {feedPosts.length === 0 && <h3>Please wait</h3>}
-      </div>
-    );
-  };
-  
-
   const handlePageClick = event => {
     const newOffset = (event.selected * itemsPerPage) % posts.length;
     console.log(
