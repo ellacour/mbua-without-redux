@@ -20,7 +20,7 @@ const Ftp = () => {
     };
     getFtpData();
     return () => (unmounted = true);
-  });
+  },[]);
 
   const displayFtpIcons = () => {
     return (
