@@ -22,7 +22,7 @@ const Ftp = () => {
     return () => (unmounted = true);
   },[]);
 
-  const displayFtpIcons = () => {
+  const displayFtpIcons = (ftpIcons) => {
     return (
       <ul id="Ftp-list">
         {ftpIcons.map(icon => {
@@ -44,7 +44,7 @@ const Ftp = () => {
 
   return (
     <Fragment>
-      <div>{displayFtpIcons()}</div>
+      {ftpIcons && displayFtpIcons(ftpIcons)}
       <div
         className="ftp-content"
         dangerouslySetInnerHTML={{ __html: ftpContent }}
