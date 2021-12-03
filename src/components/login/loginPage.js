@@ -1,7 +1,7 @@
-import React , { useEffect } from "react";
+import React, { useEffect } from "react";
 import axios from "axios";
 import Skeleton from "react-loading-skeleton";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 import "./loginPage.css";
 import blackPlus from "../../img/mbuA_+ Graphic_black.png";
@@ -12,11 +12,12 @@ const LOGIN_URL = "https://cms.mbu-a.com/wp-json/jwt-auth/v1/token";
 const LoginPage = props => {
   const { loginData, isLogged, userLoginHandler } = props;
 
-  useEffect(()=>{
+  useEffect(() => {
     if (isLogged) {
       const plusButton = document.getElementById("plus-button");
-      plusButton.classList.add("active");}
-  },[isLogged])
+      plusButton.classList.add("active");
+    }
+  }, [isLogged]);
 
   const LoginChangeHandler = userData => {
     const plusButton = document.getElementById("plus-button");
@@ -44,31 +45,25 @@ const LoginPage = props => {
       <div className="login-second-column mbua-col">
         <Link to="/mbua">
           <button id="plus-button" className="login-button">
-            <img className="login-plus" src={blackPlus} alt="button" ></img>
+            <img className="login-plus" src={blackPlus} alt="button"></img>
           </button>
         </Link>
       </div>
 
       <div className="login-third-column mbua-col-end">
-        <div className="mbua-adress-card">
-          <p className="title">
-            {loginData.mbua_name + loginData.mbua_title || (
-              <Skeleton count={1} />
-            )}
-          </p>
-          <p className="title">
-            {loginData.business_card_address || <Skeleton count={1} />}
-          </p>
-          <p className="title">
-            {loginData.business_card_city || <Skeleton count={1} />}
-          </p>
-          <p className="title">
-            {loginData.business_card_phone_number || <Skeleton count={1} />}
-          </p>
-          <p className="title">
-            {loginData.business_card_email || <Skeleton count={1} />}
-          </p>
-        </div>
+          {loginData.length > 0  ? (
+            <div className="mbua-adress-card">
+              <p className="card-name">
+                {loginData.mbua_name}{loginData.mbua_title}
+              </p>
+              <p className="card-address">{loginData.business_card_address}</p>
+              <p className="card-city">{loginData.business_card_city}</p>
+              <p className="card-phone">
+                {loginData.business_card_phone_number}
+              </p>
+              <p className="card-email">{loginData.business_card_email}</p>
+              </div>
+          ) : <Skeleton count={5} />}
         {isLogged ? (
           <div>
             <div>
