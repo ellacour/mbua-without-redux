@@ -45,7 +45,7 @@ const Ftp = () => {
 
   return (
     <Fragment>
-      {ftpIcons && displayFtpIcons(ftpIcons)}
+      { ftpIcons && ftpIcons.length > 0 && displayFtpIcons(ftpIcons)}
       {ftpContent ? (
         <div
           className="ftp-content"
