@@ -51,7 +51,7 @@ const LoginPage = props => {
       </div>
 
       <div className="login-third-column mbua-col-end">
-          {loginData.length > 0  ? (
+          {loginData ? (
             <div className="mbua-adress-card">
               <p className="card-name">
                 {loginData.mbua_name}{loginData.mbua_title}
