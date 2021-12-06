@@ -11,6 +11,7 @@ import Mbua from "./components/mbua";
 
 const API_PAGES_URL = "https://cms.mbu-a.com/wp-json/wp/v2/pages/";
 // const API_AUTHORS_URL = "https://cms.mbu-a.com/wp-json/wp/v2/users";
+const ACF_COMPLEMENT = "?_fields=acf&acf_format=standard"
 
 const App = () => {
   const [loginPageData, setLoginPageData] = useState([]);
@@ -34,7 +35,7 @@ const App = () => {
     };
 
     const getData = async () => {
-      const response = await axios(API_PAGES_URL + 81);
+      const response = await axios(API_PAGES_URL + 81+ ACF_COMPLEMENT);
       if (!unmounted) {
         setLoginPageData(response.data.acf);
         setCurrentSlider(response.data.acf.mbua_slide);

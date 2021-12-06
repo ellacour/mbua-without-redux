@@ -6,6 +6,8 @@ import "./works.css";
 import Work from "../simplePages/work";
 import WorksMenu from "../../navigations/worksMenu";
 
+const ACF_COMPLEMENT = "?acf_format=standard"
+
 const Works = props => {
   const { setCurrentSlider, setCurrentWorkContent, currentWorkContent } = props;
   const [worksListing, setWorksListing] = useState([]);
@@ -15,7 +17,7 @@ const Works = props => {
   useEffect(() => {
     let unmounted = false;
     const getWorksListing = async () => {
-      const response = await axios("https://cms.mbu-a.com/wp-json/wp/v2/work");
+      const response = await axios("https://cms.mbu-a.com/wp-json/wp/v2/work" + ACF_COMPLEMENT);
       if (!unmounted) {
         setWorksListing(response.data);
       }
