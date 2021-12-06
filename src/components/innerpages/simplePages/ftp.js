@@ -4,6 +4,8 @@ import Skeleton from "react-loading-skeleton";
 
 import "./ftp.css";
 
+const ACF_COMPLEMENT = "?acf_format=standard"
+
 const Ftp = () => {
   const [ftpContent, setFtpContent] = useState("");
   const [ftpIcons, setFtpIcons] = useState([]);
@@ -12,7 +14,7 @@ const Ftp = () => {
     let unmounted = false;
     const getFtpData = async () => {
       const response = await axios(
-        "https://cms.mbu-a.com/wp-json/wp/v2/pages/77"
+        "https://cms.mbu-a.com/wp-json/wp/v2/pages/77"+ ACF_COMPLEMENT
       );
       if (!unmounted) {
         setFtpContent(response.data.content.rendered);
