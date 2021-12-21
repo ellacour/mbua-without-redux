@@ -1,5 +1,38 @@
 #Works {
-    text-align: left;
-    height: 100%;
-    overflow-y: scroll;
+  text-align: left;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.return-plus {
+  width: 20px;
+  object-fit: contain;
+}
+
+.return-button {
+  padding: 0px;
+  background-color: transparent;
+  border: none;
+  opacity: 0.3;
+  transform: rotate(45deg);
+  transition-duration: 1s;
+  transition-property: transform, opacity;
+}
+.return-button.active {
+  opacity: 0;
+  transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  -webkit-opacity: 0;
+  -moz-opacity: 0;
+  -o-opacity: 0;
+}
+.work-content {
+  position: relative;
+}
+#plus-button-work {
+  position: absolute;
+  top: 0px;
+  right: 5px;
 }
