@@ -1,7 +1,7 @@
 import React from "react";
 import { Switch, Route, useRouteMatch } from "react-router-dom";
 
-import "./innerPagesRoutes.css"
+import "./innerPagesRoutes.css";
 import Works from "./parentPages/works";
 import Profiles from "./parentPages/profiles";
 import Contact from "./simplePages/contact";
@@ -10,18 +10,23 @@ import Ftp from "./simplePages/ftp";
 
 const InnerPagesRoutes = props => {
   let { path } = useRouteMatch();
-  // const { getCurrentWork, currentWork, setCurrentSlider } = props;
-  const { setCurrentSlider, currentWorkContent, setCurrentWorkContent } = props;
 
+  const {
+    setCurrentSlider,
+    currentWorkContent,
+    setCurrentWorkContent,
+    currentPage
+  } = props;
 
   return (
     <div id="PagesWrapper">
       <Switch>
         <Route path={`${path}/work`}>
           <Works
-          setCurrentWorkContent={setCurrentWorkContent}
-          currentWorkContent = {currentWorkContent}
-          setCurrentSlider={setCurrentSlider}
+            currentPage={currentPage}
+            setCurrentWorkContent={setCurrentWorkContent}
+            currentWorkContent={currentWorkContent}
+            setCurrentSlider={setCurrentSlider}
           />
         </Route>
         <Route path={`${path}/profile`}>

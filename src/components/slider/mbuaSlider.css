@@ -1,6 +1,6 @@
 .slider-wrapper {
   position: fixed;
-  z-index: 10000;
+  z-index: 100;
   width: 400px;
   height: 800px;
   margin: 30px 0px;

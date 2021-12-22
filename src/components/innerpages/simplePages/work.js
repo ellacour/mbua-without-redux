@@ -2,14 +2,18 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 
 import blackPlus from "../../../img/mbuA_+ Graphic_black.png";
+
 const Work = props => {
   const history = useHistory();
-  const { currentWorkContent } = props;
+  const { currentWorkContent, currentPage } = props;
 
   const clickButtonHandler = () => {
     const workButton = document.getElementById("plus-button-work");
     workButton.classList.add("active");
-    window.setTimeout(() => history.goBack(), 1000);
+    window.setTimeout(() => {
+      currentPage === "mbuA" ?
+     history.push("/mbua/work") : history.goBack()
+    }, 1000);
   };
 
   return (

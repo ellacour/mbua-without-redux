@@ -6,18 +6,25 @@ import "./works.css";
 import Work from "../simplePages/work";
 import WorksMenu from "../../navigations/worksMenu";
 
-const ACF_COMPLEMENT = "?acf_format=standard"
+const ACF_COMPLEMENT = "?acf_format=standard";
 
 const Works = props => {
-  const { setCurrentSlider, setCurrentWorkContent, currentWorkContent } = props;
+  const {
+    setCurrentSlider,
+    setCurrentWorkContent,
+    currentWorkContent,
+    currentPage
+  } = props;
   const [worksListing, setWorksListing] = useState([]);
-  // const [currentWorkContent, setCurrentWorkContent] = useState("");
+
   let { path } = useRouteMatch();
 
   useEffect(() => {
     let unmounted = false;
     const getWorksListing = async () => {
-      const response = await axios("https://cms.mbu-a.com/wp-json/wp/v2/work" + ACF_COMPLEMENT);
+      const response = await axios(
+        "https://cms.mbu-a.com/wp-json/wp/v2/work" + ACF_COMPLEMENT
+      );
       if (!unmounted) {
         setWorksListing(response.data);
       }
@@ -32,7 +39,7 @@ const Works = props => {
         title: content.title.rendered,
         photos: content.acf.photos,
         text: content.content.rendered,
-        slug: content.slug,
+        slug: content.slug
       };
       setCurrentWorkContent(workContent);
       setCurrentSlider(content.acf.photos);
@@ -49,17 +56,16 @@ const Works = props => {
           />
         </Route>
         <Route path={`${path}/:slug`}>
-          <Work currentWorkContent={currentWorkContent} />
+          <Work
+            currentWorkContent={currentWorkContent}
+            currentPage={currentPage}
+          />
         </Route>
       </Switch>
     );
   };
 
-  return (
-    <div id="Works">
-      {worksRouting()}
-    </div>
-  );
+  return <div id="Works">{worksRouting()}</div>;
 };
 
 export default Works;

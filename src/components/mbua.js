@@ -35,7 +35,11 @@ const Mbua = props => {
           {mbuaName}
           <span className="italic-text">{mbuaTitle}</span>
         </h1>
-        <SliderButtons currentPage={currentPage} currentWork={currentWork} />
+        <SliderButtons
+          currentPage={currentPage}
+          currentWork={currentWork}
+          getCurrentPage={getCurrentPage}
+        />
       </div>
       <div id="mbua-second-column">
         <div
@@ -49,11 +53,11 @@ const Mbua = props => {
         </div>
       </div>
       <div id="mbua-third-column">
-        {/* <InnerPagesRoutes getCurrentWork={getCurrentWork} currentWork={currentWork} setCurrentSlider={setCurrentSlider}></InnerPagesRoutes> */}
         <InnerPagesRoutes
           setCurrentSlider={setCurrentSlider}
           setCurrentWorkContent={getCurrentWork}
           currentWorkContent={currentWork}
+          currentPage={currentPage}
         ></InnerPagesRoutes>
       </div>
       <div id="mbua-fourth-column">

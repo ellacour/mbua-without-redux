@@ -2,7 +2,47 @@
     position: absolute;
     bottom: 25px;
     right: 25px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
+
 .slider-button-work{
-    margin-right: 15px;
+    font-style: italic;
 }
+
+.slider-plus {
+    width: 20px;
+    object-fit: contain;
+  }
+  
+  .slider-button {
+    margin-bottom: 3px;
+    height: 20px;
+    padding: 0px;
+    background-color: transparent;
+    border: none;
+    opacity: 0.9;
+    transform: rotate(0deg);
+    transition-duration: 1s;
+    transition-property: transform, opacity;
+  }
+  .slider-button.active {
+    cursor: pointer;
+    opacity: 0.5;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -webkit-opacity: 0.5;
+    -moz-opacity:0.5;
+    -o-opacity:0.5;
+  }
+
+  #plus-button-slider {
+    position: absolute;
+    right: -50px;
+    z-index: 10000;
+    bottom: 0px;
+  }
+  
