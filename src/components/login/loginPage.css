@@ -7,6 +7,32 @@
   height: 100%;
   text-align: left;
 }
+#login-form {
+  max-width: 320px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+#login-form label {
+  margin-right: 10px;
+}
+
+#login-form button,
+#login-form input {
+  padding: 0px;
+  background-color: transparent;
+  border: none;
+  font-family: "AdobeHebrew-Regular", "Lora", serif;
+  color: rgb(77, 77, 77);
+  font-size: 0.95rem;
+}
+
+ #login-form input {
+  appearance: none !important;
+  background-color: #cccccc3b !important;
+  padding: 5px;
+  font-size: 0.85rem;
+}
 
 .login-first-column {
   width: 43.33%;
@@ -18,6 +44,7 @@
   padding-left: 25px;
   padding-bottom: 25px;
   width: 43.33%;
+  position: relative;
 }
 .column-login-loading {
   width: 43.33%;
@@ -26,17 +53,18 @@
 
 .mbua-adress-card {
   position: absolute;
-  top: 39%;
+  top: 40%;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  font-size: large;
 }
 
 .mbua-adress-card p {
-  margin: 0px 0px 4px 0px;
+  margin: 0px 0px 5px 0px;
 }
 
-.login-third-column.mbua-col-end > span:first-child{
+.login-third-column.mbua-col-end > span:first-child {
   position: absolute;
   top: 385px;
   width: 325px;
@@ -58,10 +86,10 @@
   -moz-transition-duration: 1s;
   -o-transition-duration: 1s;
   transition-duration: 1s;
-  -webkit-transition-property: -webkit-transform , -webkit-opacity;
+  -webkit-transition-property: -webkit-transform, -webkit-opacity;
   -moz-transition-property: -moz-transform, -moz-opacity;
   -o-transition-property: -o-transform, -o-opacity;
-  transition-property: transform,opacity ;
+  transition-property: transform, opacity;
 }
 
 .login-button.active {
@@ -72,6 +100,6 @@
   -ms-transform: rotate(90deg);
   -o-transform: rotate(90deg);
   -webkit-opacity: 1;
-  -moz-opacity:1;
-  -o-opacity:1;
+  -moz-opacity: 1;
+  -o-opacity: 1;
 }

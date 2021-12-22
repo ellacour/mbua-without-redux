@@ -27,7 +27,7 @@ const LoginForm = props => {
 
   return (
     <Fragment>
-      <form id="Login-form" onSubmit={submitHandler}>
+      <form id="login-form" onSubmit={submitHandler}>
         <label className="">
           Username :
           <input

@@ -23,6 +23,9 @@
   font-size: small;
   color: rgb(77, 77, 77);
 }
+label{
+  font-size: 0.95rem;
+}
 .App a{
   color: rgb(77, 77, 77);
   text-decoration:none;

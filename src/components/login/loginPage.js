@@ -26,8 +26,8 @@ const LoginPage = props => {
         const response = await axios.post(LOGIN_URL, userData);
         const token = await response.data.token;
         const userName = await response.data.user_nicename;
-        localStorage.setItem("token", token);
-        localStorage.setItem("userName", userName);
+        sessionStorage.setItem("token", token);
+        sessionStorage.setItem("userName", userName);
         userLoginHandler(true);
         plusButton.classList.add("active");
       } catch (err) {
@@ -51,19 +51,20 @@ const LoginPage = props => {
       </div>
 
       <div className="login-third-column mbua-col-end">
-          {loginData ? (
-            <div className="mbua-adress-card">
-              <p className="card-name">
-                {loginData.mbua_name}{loginData.mbua_title}
-              </p>
-              <p className="card-address">{loginData.business_card_address}</p>
-              <p className="card-city">{loginData.business_card_city}</p>
-              <p className="card-phone">
-                {loginData.business_card_phone_number}
-              </p>
-              <p className="card-email">{loginData.business_card_email}</p>
-              </div>
-          ) : <Skeleton count={5} />}
+        {loginData ? (
+          <div className="mbua-adress-card">
+            <p className="card-name">
+              {loginData.mbua_name}
+              {loginData.mbua_title}
+            </p>
+            <p className="card-address">{loginData.business_card_address}</p>
+            <p className="card-city">{loginData.business_card_city}</p>
+            <p className="card-phone">{loginData.business_card_phone_number}</p>
+            <p className="card-email">{loginData.business_card_email}</p>
+          </div>
+        ) : (
+          <Skeleton count={5} />
+        )}
         {isLogged ? (
           <div>
             <div>

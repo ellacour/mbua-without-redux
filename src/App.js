@@ -11,19 +11,18 @@ import Mbua from "./components/mbua";
 
 const API_PAGES_URL = "https://cms.mbu-a.com/wp-json/wp/v2/pages/";
 // const API_AUTHORS_URL = "https://cms.mbu-a.com/wp-json/wp/v2/users";
-const ACF_COMPLEMENT = "?_fields=acf&acf_format=standard"
+const ACF_COMPLEMENT = "?_fields=acf&acf_format=standard";
 
 const App = () => {
   const [loginPageData, setLoginPageData] = useState([]);
   const [currentSlider, setCurrentSlider] = useState([]);
   const [mbuaDataPage, setMbuaDataPage] = useState([]);
-  const [menuItems, setMenuItems] = useState([]); 
+  const [menuItems, setMenuItems] = useState([]);
   const [userIsLogged, setUserIsLogged] = useState(false);
-  
-  
 
-
+  
   useEffect(() => {
+    // window.addEventListener("beforeunload", window.localStorage.clear())
     let unmounted = false;
     const getMenuItems = async () => {
       const response = await axios(
@@ -35,7 +34,7 @@ const App = () => {
     };
 
     const getData = async () => {
-      const response = await axios(API_PAGES_URL + 81+ ACF_COMPLEMENT);
+      const response = await axios(API_PAGES_URL + 81 + ACF_COMPLEMENT);
       if (!unmounted) {
         setLoginPageData(response.data.acf);
         setCurrentSlider(response.data.acf.mbua_slide);
@@ -54,7 +53,7 @@ const App = () => {
   }, []);
 
   const PrivateRoute = props => {
-    const token = localStorage.getItem("token");
+    const token = sessionStorage.getItem("token");
     return userIsLogged || token ? (
       <Route {...props} />
     ) : (
