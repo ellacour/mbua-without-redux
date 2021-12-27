@@ -1,0 +1,13 @@
+#contact-content {
+  height: 100%;
+}
+
+#contact-content a{
+    font-weight: 800;
+}
+
+#contact-map {
+  margin: 20px 0px;
+  height: 295px;
+  width: 295px;
+}

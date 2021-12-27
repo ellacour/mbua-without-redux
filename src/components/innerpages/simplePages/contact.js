@@ -1,5 +1,8 @@
-import React, { useState, useEffect, Fragment } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
+
+import SimpleMap from "./../../map/map";
+import "./contact.css"
 
 const Contact = () => {
   const [contactContent, setContactContent] = useState("");
@@ -19,14 +22,13 @@ const Contact = () => {
   }, []);
 
   return (
-    <Fragment>
-      <h3>Contact</h3>
-      <div>Map</div>
+    <div id="contact-content">
+      <SimpleMap></SimpleMap>
       <div
-        className="contact-content"
+        className="contact-infos"
         dangerouslySetInnerHTML={{ __html: contactContent }}
       />
-    </Fragment>
+    </div>
   );
 };
 
