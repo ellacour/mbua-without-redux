@@ -1,18 +1,22 @@
 #Feed {
-    text-align: left;
-    height: 100%;
-    overflow-y: scroll;
+  text-align: left;
+  height: 100%;
+  overflow-y: scroll;
 }
-
-#Feed img{
-    width: 98%;
-    height: auto;
+#Feed ul {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 5px;
+  width: 290px;
 }
-
+#Feed img {
+  width: 98%;
+  height: auto;
+}
 #Feed figure {
-    display: block;
-    margin-block-start: 0;
-    margin-block-end: 0;
-    margin-inline-start: 0;
-    margin-inline-end: 0;
+  display: block;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
 }

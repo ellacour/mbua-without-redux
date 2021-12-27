@@ -45,6 +45,7 @@ const Feed = props => {
     <div id="Feed">
     <PostsFeed feedPosts={currentPost}/>
       <ReactPaginate
+        id="feed-pagination"
         breakLabel="..."
         nextLabel="next >"
         onPageChange={handlePageClick}
