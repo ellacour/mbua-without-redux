@@ -1,13 +1,12 @@
 import React from "react";
 import Slider from "react-slick";
 
-
 import "./slick.css";
 import "./slick-theme.css";
 import "./mbuaSlider.css";
 
 const MbuaSlider = props => {
-  const { currentPage } = props;
+  const { currentPage, getCurrentSlide } = props;
   const sliderImg = props.currentSlider;
 
   const settings = {
@@ -16,9 +15,10 @@ const MbuaSlider = props => {
     infinite: true,
     slidesToScroll: 1,
     autoplay: true,
-    speed: 1000,
+    speed: 500,
     autoplaySpeed: 4000,
-    cssEase: "linear"
+    cssEase: "linear",
+    afterChange: getCurrentSlide,
   };
 
   const sliders = () => {

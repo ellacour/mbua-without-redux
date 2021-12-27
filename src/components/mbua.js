@@ -2,15 +2,18 @@ import React, { useState, useEffect } from "react";
 
 import "./mbua.css";
 import MbuaSlider from "./slider/mbuaSlider";
+import SliderCounter from "./slider/sliderCounter";
 import Menu from "./navigations/mainMenu";
 import SliderButtons from "./navigations/sliderButtons";
 import InnerPagesRoutes from "./innerpages/innerPagesRoutes";
 
 const Mbua = props => {
+  const { mbuaName, mbuaTitle, mbuaSliderImages, menuItems } = props;
+
   const [currentSlider, setCurrentSlider] = useState([]);
   const [currentPage, setCurrentPage] = useState("");
-  const { mbuaName, mbuaTitle, mbuaSliderImages, menuItems } = props;
   const [currentWork, setCurrentWork] = useState("");
+  const [currentSlide, setCurrentSlide] = useState(1);
 
   useEffect(() => {
     setCurrentPage("mbuA");
@@ -20,12 +23,21 @@ const Mbua = props => {
     setCurrentSlider(mbuaSliderImages);
   }, [mbuaSliderImages]);
 
+  useEffect(() => {
+    setCurrentSlide(1);
+  }, [currentSlider]);
+
   const getCurrentPage = page => {
     setCurrentPage(page);
   };
 
   const getCurrentWork = work => {
     setCurrentWork(work);
+  };
+
+  const getCurrentSlide = () => {
+    currentSlide < currentSlider.length && setCurrentSlide(prevState => prevState+1);
+    currentSlide >= currentSlider.length && setCurrentSlide(1);
   };
 
   return (
@@ -49,6 +61,7 @@ const Mbua = props => {
           <MbuaSlider
             currentSlider={currentSlider}
             currentPage={currentPage}
+            getCurrentSlide={getCurrentSlide}
           ></MbuaSlider>
         </div>
       </div>
@@ -61,6 +74,10 @@ const Mbua = props => {
         ></InnerPagesRoutes>
       </div>
       <div id="mbua-fourth-column">
+        <SliderCounter
+          currentSlide={currentSlide}
+          totalSlides={currentSlider.length}
+        />
         <Menu
           menuItems={menuItems}
           currentPage={currentPage}

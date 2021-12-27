@@ -20,7 +20,15 @@ img.mbua-slider-img {
   width: 800px;
   object-fit: cover !important;
 }
-
+#slider-counter{
+  position: absolute;
+  top:50%;
+  display: flex;
+  right:0px;
+  margin-right: 45px;
+  font-style: italic;
+  font-size: 1.9em;
+}
 /* ///// RESPONSIVE ////// */
 
 @media all and (min-width: 1500px) {
