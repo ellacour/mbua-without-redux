@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import "./sliderButton.css";
-import blackPlus from "../../img/mbuA_+ Graphic_black.png";
+import blackPlus from "../../img/mbuA_+ Graphic.png";
 
 const SliderButtons = props => {
   const { currentWork, currentPage } = props;
