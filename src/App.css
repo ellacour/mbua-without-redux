@@ -71,36 +71,3 @@ p.pad-right-125 {
   justify-content: flex-end;
 }
 
-/* ///// RESPONSIVE ////// */
-
-@media all and (min-width: 1500px) {
-  .mbua-wrapper {
-    width: 1400px;
-    height: 860px;
-  }
-}
-
-@media all and (min-width: 1200px) and (max-width: 1500px) {
-  .mbua-wrapper {
-    width: 1100px;
-    height: 676px;
-  }
-  .title {
-    font-size: 1.3rem;
-    font-weight: 500;
-  }
-}
-
-@media all and (min-width: 992px) and (max-width: 1200px),
-  (min-height: 590px) and (max-height: 676px) and (min-width: 992px) {
-  .mbua-wrapper {
-    width: 960px;
-    height: 590px;
-  }
-}
-@media all and (max-width: 992px) {
-  .mbua-wrapper {
-    width: 100vw;
-    height: 100vh;
-  }
-}
