@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
+import { isTablet, isMobile} from "react-device-detect";
 
 import axios from "axios";
 import "react-loading-skeleton/dist/skeleton.css";
 
 import "./App.css";
+import "./components/responsive/responsive.css";
 
 import LoginPage from "./components/login/loginPage";
 import Mbua from "./components/mbua";
 
 const API_PAGES_URL = "https://cms.mbu-a.com/wp-json/wp/v2/pages/";
-// const API_AUTHORS_URL = "https://cms.mbu-a.com/wp-json/wp/v2/users";
 const ACF_COMPLEMENT = "?_fields=acf&acf_format=standard";
 
 const App = () => {
@@ -20,7 +21,6 @@ const App = () => {
   const [menuItems, setMenuItems] = useState([]);
   const [userIsLogged, setUserIsLogged] = useState(false);
 
-  
   useEffect(() => {
     // window.addEventListener("beforeunload", window.localStorage.clear())
     let unmounted = false;
@@ -90,7 +90,9 @@ const App = () => {
   };
 
   return (
-    <div className="App">
+    <div
+      className={`App${(isTablet && " tablet-view") || ""}${(isMobile && " mobile-view") || ""}`}
+    >
       <div className="mbua-wrapper">{Routes()}</div>
     </div>
   );
