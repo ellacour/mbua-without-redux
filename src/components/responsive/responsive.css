@@ -10,6 +10,7 @@
 }
 
 .App.tablet-view .slider-wrapper {
+  position: relative;
   width: 310px;
   height: 620px;
   margin: 0px;
@@ -62,6 +63,6 @@
   bottom: 5px;
 }
 .App.tablet-view #ProfilesMenu {
-    bottom: -1px;
-    width: 310px;
+  bottom: -1px;
+  width: 310px;
 }
