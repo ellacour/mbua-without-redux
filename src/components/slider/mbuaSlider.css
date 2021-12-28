@@ -1,5 +1,5 @@
 .slider-wrapper {
-  position: fixed;
+  /* position: fixed; */
   z-index: 100;
   width: 400px;
   height: 800px;
@@ -11,6 +11,7 @@
 
 .slider-wrapper.large-slider {
   width: 800px;
+  
 }
 .slider-wrapper .slick-slide {
   height: 800px;
@@ -45,6 +46,9 @@ img.mbua-slider-img {
   img.mbua-slider-img {
     height: 630px;
     width: 630px;
+  }
+  .slider-wrapper .slick-slide {
+    height: 630px;
   }
 }
 

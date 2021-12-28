@@ -3,6 +3,20 @@
   height: 100%;
   overflow-y: scroll;
 }
+#Feed {
+  overflow-x: hidden;
+  scrollbar-width: none;
+}
+#Feed::-webkit-scrollbar {
+  display: none;
+}
+#Feed::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+#Feed {
+  -ms-overflow-style: none;
+}
 #Feed ul {
   display: flex;
   justify-content: space-between;

@@ -7,6 +7,24 @@
   justify-content: flex-start;
 }
 
+#Works {
+  overflow-x: hidden;
+  scrollbar-width: none; /*Firefox > 64*/
+}
+#Works::-webkit-scrollbar {
+  display: none;
+}
+
+#Works::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+/* Hide scrollbar for IE and Edge */
+#Works {
+  -ms-overflow-style: none;
+}
+
 .return-plus {
   width: 20px;
   object-fit: contain;

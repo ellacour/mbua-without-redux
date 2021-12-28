@@ -10,16 +10,35 @@
 }
 
 #Profiles {
-    text-align: left;
-    height: 100%;
-    position: relative;
-    overflow: hidden;
+  text-align: left;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
 }
-.profile-content{
+
+.profile-content {
   overflow: scroll;
   max-height: 100%;
 }
 
-.profile-content p:last-of-type{
+.profile-content {
+  overflow-x: hidden;
+  scrollbar-width: none;
+}
+
+.profile-content::-webkit-scrollbar {
+  display: none;
+}
+
+.profile-content::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+.profile-content {
+  -ms-overflow-style: none;
+}
+
+.profile-content p:last-of-type {
   margin-bottom: 35px;
 }
