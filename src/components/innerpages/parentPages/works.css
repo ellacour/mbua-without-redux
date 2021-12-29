@@ -1,35 +1,15 @@
 #Works {
   text-align: left;
   height: 100%;
-  overflow-y: scroll;
   display: flex;
+  overflow: hidden;
   flex-direction: column;
   justify-content: flex-start;
 }
-
-#Works {
-  overflow-x: hidden;
-  scrollbar-width: none; /*Firefox > 64*/
-}
-#Works::-webkit-scrollbar {
-  display: none;
-}
-
-#Works::-webkit-scrollbar {
-  width: 0px;
-  background: transparent;
-}
-
-/* Hide scrollbar for IE and Edge */
-#Works {
-  -ms-overflow-style: none;
-}
-
 .return-plus {
   width: 20px;
   object-fit: contain;
 }
-
 .return-button {
   padding: 0px;
   background-color: transparent;
@@ -46,14 +26,36 @@
   -ms-transform: rotate(180deg);
   -o-transform: rotate(180deg);
   -webkit-opacity: 0;
-  -moz-opacity: 0;
   -o-opacity: 0;
 }
+
 .work-content {
-  position: relative;
+  overflow-y: scroll;
+  max-height: 98%;
+  overflow-x: hidden;
+  scrollbar-width: none;
 }
-#plus-button-work {
-  position: absolute;
-  top: 0px;
-  right: 5px;
+
+.work-content::-webkit-scrollbar {
+  display: none;
 }
+
+.work-content::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+.work-content {
+  -ms-overflow-style: none;
+}
+.work-header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.work-title-content {
+  flex-grow: 2;
+}
+.work-details {
+  height: 100%;
+  }

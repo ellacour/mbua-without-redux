@@ -5,7 +5,7 @@
 }
 
 #mbua-first-column {
-  width: 475px;
+  width: 500px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -22,10 +22,10 @@
   width: 400px;
   display: flex;
   flex-direction: column;
-  padding: 25px 25px 25px 25px;
+  padding: 30px 25px 30px 25px;
   text-align: left;
   box-sizing: border-box;
-  overflow:scroll;
+  overflow:hidden;
 }
 #mbua-third-column {
   overflow-x: hidden;
@@ -46,7 +46,7 @@
 }
 
 #mbua-fourth-column {
-  width: 125px;
+  width: 100px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;

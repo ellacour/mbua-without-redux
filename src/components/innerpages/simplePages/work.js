@@ -11,24 +11,25 @@ const Work = props => {
     const workButton = document.getElementById("plus-button-work");
     workButton.classList.add("active");
     window.setTimeout(() => {
-      currentPage === "mbuA" ?
-     history.push("/mbua/work") : history.goBack()
+      currentPage === "mbuA" ? history.push("/mbua/work") : history.goBack();
     }, 1000);
   };
 
   return (
     currentWorkContent && (
-      <div className="work-content">
-        <button
-          id="plus-button-work"
-          className="return-button"
-          onClick={clickButtonHandler}
-        >
-          <img className="return-plus" src={blackPlus} alt="button"></img>
-        </button>
-        <h3 className="work-title-content">{currentWorkContent.title}</h3>
+      <div className="work-details">
+        <div className="work-header">
+          <h3 className="work-title-content">{currentWorkContent.title}</h3>
+          <button
+            id="plus-button-work"
+            className="return-button"
+            onClick={clickButtonHandler}
+          >
+            <img className="return-plus" src={blackPlus} alt="button"></img>
+          </button>
+        </div>
         <div
-          className="work-text-content"
+          className="work-content"
           dangerouslySetInnerHTML={{ __html: currentWorkContent.text } || ""}
         />
       </div>

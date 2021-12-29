@@ -3,10 +3,11 @@ import React from "react";
 const PostsFeed = props => {
   const { feedPosts } = props;
   return (
-    <div>
+    <div className="feed-content">
       {feedPosts &&
         feedPosts.map(post => (
           <div key={post.id}>
+            <div className="feed-date" >{post.date}</div>
             <h3>{post.title.rendered}</h3>
             <div dangerouslySetInnerHTML={{ __html: post.content.rendered }} />
           </div>
@@ -16,4 +17,4 @@ const PostsFeed = props => {
   );
 };
 
-export default PostsFeed ;
+export default PostsFeed;

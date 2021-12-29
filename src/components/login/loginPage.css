@@ -52,12 +52,13 @@
 }
 
 .mbua-adress-card {
-  position: absolute;
-  top: 40%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  font-size: large;
+    position: absolute;
+    top: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    font-size: large;
+    transform: translateY(-50%);
 }
 
 .mbua-adress-card p {
@@ -87,7 +88,7 @@
   -o-transition-duration: 1s;
   transition-duration: 1s;
   -webkit-transition-property: -webkit-transform, -webkit-opacity;
-  -moz-transition-property: -moz-transform, -moz-opacity;
+  -moz-transition-property: -moz-transform;
   -o-transition-property: -o-transform, -o-opacity;
   transition-property: transform, opacity;
 }
@@ -100,6 +101,5 @@
   -ms-transform: rotate(90deg);
   -o-transform: rotate(90deg);
   -webkit-opacity: 1;
-  -moz-opacity: 1;
   -o-opacity: 1;
 }

@@ -1,5 +1,5 @@
 /* LANDSCAPE TABLET VIEW */
-.App.tablet-view {
+/* .App.tablet-view {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
@@ -74,7 +74,7 @@
 }
 .App.tablet-view #main-menu > #main-menu-items {
   padding-bottom: 5px;
-}
+} */
 
 /* ///// RESPONSIVE ////// */
 
@@ -83,11 +83,21 @@
     width: 1400px;
     height: 860px;
   }
-  #plus-button-slider {
-    bottom: 5px;
-  }
+
   #main-menu > #main-menu-items {
     padding-inline-start: 10px;
+  }
+  body #login-form {
+    max-width: initial;
+  }
+  body #login-form input {
+    margin-left: 5px;
+  }
+  body #login-form button {
+    padding: 5px;
+  }
+  body .login-third-column {
+    padding-bottom: 50px;
   }
 }
 
@@ -110,10 +120,22 @@
   body #mbua-third-column {
     height: 625px;
     margin-top: 20px;
+    padding: 15px 25px 0px 25px;
   }
   body #mbua-fourth-column {
     width: 95px;
   }
+
+  body #Feed ul {
+    width: 265px;
+    padding-top: 10px;
+    margin-bottom: 0px;
+  }
+  body #contact-map {
+    margin: 20px 0px;
+    height: 265px;
+    width: 265px;
+}
 }
 
 @media all and (min-width: 992px) and (max-width: 1199px),

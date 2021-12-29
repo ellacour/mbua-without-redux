@@ -1,31 +1,51 @@
 #Feed {
   text-align: left;
-  height: 100%;
-  overflow-y: scroll;
+  overflow: hidden;
 }
-#Feed {
+.feed-content {
+  overflow: scroll;
+  max-height: 100%;
+}
+
+.feed-content {
   overflow-x: hidden;
   scrollbar-width: none;
 }
-#Feed::-webkit-scrollbar {
+.feed-date, #Feed a {
+  margin-top: 20px;
+  color: rgb(204, 204, 204);
+  font-style: italic;
+}
+.feed-content::-webkit-scrollbar {
   display: none;
 }
-#Feed::-webkit-scrollbar {
+
+.feed-content::-webkit-scrollbar {
   width: 0px;
   background: transparent;
 }
-#Feed {
+
+.feed-content {
   -ms-overflow-style: none;
 }
+
 #Feed ul {
   display: flex;
-  justify-content: space-between;
-  padding: 0px 5px;
-  width: 290px;
+  justify-content: flex-end;
+  position: absolute;
+  bottom: 40px;
+  background: white;
+  width: 350px;
+  padding-top: 20px;
+  padding-left: 0px;
+  box-sizing: content-box;
+  box-shadow: -10px -10px 10px white;
 }
+
 #Feed img {
   width: 95%;
   height: auto;
+  margin-top: 0px;
 }
 #Feed figure {
   display: block;
@@ -34,3 +54,11 @@
   margin-inline-start: 0;
   margin-inline-end: 0;
 }
+#Feed p {
+  margin-top: 5px;
+}
+#Feed li {
+  margin-right: 15px;
+}
+
+

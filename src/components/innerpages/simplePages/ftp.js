@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Fragment } from "react";
+import React, { useState, useEffect} from "react";
 import axios from "axios";
 import Skeleton from "react-loading-skeleton";
 
@@ -46,15 +46,15 @@ const Ftp = () => {
   };
 
   return (
-    <Fragment>
+    <div className="ftp-content">
       { ftpIcons && ftpIcons.length > 0 && displayFtpIcons(ftpIcons)}
       {ftpContent ? (
         <div
-          className="ftp-content"
+          className=""
           dangerouslySetInnerHTML={{ __html: ftpContent }}
         />
       ):(<Skeleton count={5}/>)}
-    </Fragment>
+    </div>
   );
 };
 

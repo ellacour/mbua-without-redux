@@ -9,6 +9,7 @@
 
 .slider-button-work{
     font-style: italic;
+    margin-bottom: 5px;
 }
 
 .slider-plus {
@@ -35,14 +36,13 @@
     -ms-transform: rotate(45deg);
     -o-transform: rotate(45deg);
     -webkit-opacity: 0.5;
-    -moz-opacity:0.5;
     -o-opacity:0.5;
   }
 
   #plus-button-slider {
     position: absolute;
-    right: -50px;
+    right: -55px;
     z-index: 10000;
-    bottom: 0px;
+    bottom: 10px;
   }
   

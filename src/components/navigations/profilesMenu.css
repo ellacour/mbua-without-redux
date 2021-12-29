@@ -8,16 +8,25 @@
     background-color: white;
     box-shadow: -10px -10px 10px white;
     width:300px;
-    padding-top: 5px;
+    padding-top: 25px;
 }
 
 #ProfilesMenu li{
-    margin-right: 8px;
+    margin-right: 3px;
     font-style: italic;
+    margin-bottom: 5px;
 }
 
 #ProfilesMenu li a{
     color:rgb(204,204,204);
+}
+#ProfilesMenu li a::after{
+    content: " . ";
+    font-size: 1.6em;
+    line-height: 0px;
+}
+#ProfilesMenu li:last-child a::after{
+    content: " ";
 }
 
 #ProfilesMenu li.active a{

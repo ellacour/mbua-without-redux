@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import "./mainMenu.css";
 
 const Menu = props => {
-  const { menuItems, currentPage, getCurrentPage, setCurrentSlider, mbuaSliderImages} = props;
+  const { menuItems, currentPage, setCurrentPage, setCurrentSlider, mbuaSliderImages} = props;
  
 
   const AUTHORISED = ["mbuA", "work", "profile", "feed", "contact", "ftp"];
@@ -12,11 +12,11 @@ const Menu = props => {
   let menu = <p>No items</p>;
 
   const menuClicksHandler = (page) => {
-    getCurrentPage(page);
+    setCurrentPage(page);
   };
 
   const mbuAMenuClickHandler = (page)=>{
-    getCurrentPage(page);
+    setCurrentPage(page);
     setCurrentSlider(mbuaSliderImages);
   }
 
@@ -48,11 +48,10 @@ const Menu = props => {
                 "active"}`}
               key={menuItem.ID}
               id={menuItem.ID}
-              onClick={()=> menuClicksHandler(menuItem.title)}
             >
               <Link
                 to={`/mbua/${menuItem.title}`}
-                onClick={menuClicksHandler}
+                onClick={()=> menuClicksHandler(menuItem.title)}
                 className="main-menu-link"
               >
                 {menuItem.title}
