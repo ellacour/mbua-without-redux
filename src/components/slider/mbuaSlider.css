@@ -32,10 +32,10 @@ img.mbua-slider-img {
 }
 /* ///// RESPONSIVE ////// */
 
-@media all and (min-width: 1700px) {
+@media all and (min-width: 1600px) {
 }
 
-@media all and (min-width: 1200px) and (max-width: 1700px) {
+@media all and (min-width: 1200px) and (max-width: 1600px) {
   .slider-wrapper {
     width: 315px;
     height: 630px;
