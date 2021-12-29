@@ -138,7 +138,8 @@
   }
 }
 @media all and (max-width: 1099px) and (max-height: 676px) {
-  .mbua-wrapper {
+  
+  body, .mbua-wrapper {
     width: 100vw;
     height: 100vh;
   }
@@ -154,6 +155,9 @@
     z-index: 100;
     width: 300px;
     height: 600px;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0px;
   }
   body #mbua-first-column {
     width: 470px;
@@ -194,4 +198,5 @@
   body .mbua-adress-card {
     font-size: 1.4em;
   }
+
 }
