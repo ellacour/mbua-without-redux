@@ -16,7 +16,7 @@ const Mbua = props => {
   const [currentSlide, setCurrentSlide] = useState(1);
 
   useEffect(() => {
-    setCurrentPage("mbuA");
+    !setCurrentPage && setCurrentPage( "mbuA")
   }, []);
 
   useEffect(() => {
@@ -27,9 +27,6 @@ const Mbua = props => {
     setCurrentSlide(1);
   }, [currentSlider]);
 
-  const getCurrentPage = page => {
-    setCurrentPage(page);
-  };
 
   const getCurrentWork = work => {
     setCurrentWork(work);
@@ -50,7 +47,6 @@ const Mbua = props => {
         <SliderButtons
           currentPage={currentPage}
           currentWork={currentWork}
-          getCurrentPage={getCurrentPage}
         />
       </div>
       <div id="mbua-second-column">
@@ -81,7 +77,7 @@ const Mbua = props => {
         <Menu
           menuItems={menuItems}
           currentPage={currentPage}
-          getCurrentPage={getCurrentPage}
+          setCurrentPage={setCurrentPage}
           setCurrentSlider={setCurrentSlider}
           mbuaSliderImages={mbuaSliderImages}
         ></Menu>
