@@ -10,14 +10,15 @@ import LoginForm from "./loginForm";
 const LOGIN_URL = "https://cms.mbu-a.com/wp-json/jwt-auth/v1/token";
 
 const LoginPage = props => {
-  const { loginData, isLogged, userLoginHandler } = props;
+  const { loginData, isLogged, userLoginHandler,setCurrentPage } = props;
 
   useEffect(() => {
     if (isLogged) {
       const plusButton = document.getElementById("plus-button");
       plusButton.classList.add("active");
+      setCurrentPage('mbuA');
     }
-  }, [isLogged]);
+  }, [isLogged,setCurrentPage]);
 
   const LoginChangeHandler = userData => {
     const plusButton = document.getElementById("plus-button");

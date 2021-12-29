@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 
 import "./mbua.css";
 import MbuaSlider from "./slider/mbuaSlider";
@@ -8,15 +9,17 @@ import SliderButtons from "./navigations/sliderButtons";
 import InnerPagesRoutes from "./innerpages/innerPagesRoutes";
 
 const Mbua = props => {
-  const { mbuaName, mbuaTitle, mbuaSliderImages, menuItems } = props;
+  const history = useHistory();
+  const { mbuaName, mbuaTitle, mbuaSliderImages, menuItems,currentPage, setCurrentPage } = props;
 
   const [currentSlider, setCurrentSlider] = useState([]);
-  const [currentPage, setCurrentPage] = useState("");
   const [currentWork, setCurrentWork] = useState("");
   const [currentSlide, setCurrentSlide] = useState(1);
-
+ 
+  
   useEffect(() => {
-    !setCurrentPage && setCurrentPage( "mbuA")
+    history.location.pathname ==="/mbua" && setCurrentPage("mbuA");
+    // eslint-disable-next-line
   }, []);
 
   useEffect(() => {

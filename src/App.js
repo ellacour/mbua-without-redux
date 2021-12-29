@@ -20,6 +20,7 @@ const App = () => {
   const [mbuaDataPage, setMbuaDataPage] = useState([]);
   const [menuItems, setMenuItems] = useState([]);
   const [userIsLogged, setUserIsLogged] = useState(false);
+  const [currentPage, setCurrentPage] = useState("");
 
   useEffect(() => {
     // window.addEventListener("beforeunload", window.localStorage.clear())
@@ -75,6 +76,8 @@ const App = () => {
               mbuaTitle={mbuaDataPage.mbuaTitle}
               mbuaSliderImages={currentSlider}
               menuItems={menuItems}
+              currentPage={currentPage}
+              setCurrentPage={setCurrentPage}
             ></Mbua>
           </PrivateRoute>
           <Route path="/">
@@ -82,6 +85,7 @@ const App = () => {
               loginData={loginPageData}
               isLogged={userIsLogged}
               userLoginHandler={setUserIsLogged}
+              setCurrentPage={setCurrentPage}
             ></LoginPage>
           </Route>
         </Switch>

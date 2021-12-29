@@ -25,7 +25,7 @@ const MbuaSlider = props => {
     return sliderImg.map(data => {
       return (
         <div
-          className={`mbua-slider-img-wrapper ${currentPage === "mbuA" &&
+          className={`mbua-slider-img-wrapper ${currentPage === "mbua" &&
             "largeSlider currentPage"}`}
           key={data.ID}
         >
