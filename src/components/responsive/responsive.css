@@ -101,7 +101,7 @@
   }
 }
 
-@media all and (min-width: 1200px) and (max-width: 1600px) {
+@media all and (min-width: 1100px) and (min-height: 676px) and (max-width: 1600px) {
   .mbua-wrapper {
     width: 1100px;
     height: 676px;
@@ -135,19 +135,63 @@
     margin: 20px 0px;
     height: 265px;
     width: 265px;
-}
-}
-
-@media all and (min-width: 992px) and (max-width: 1199px),
-  (min-height: 590px) and (max-height: 676px) and (min-width: 992px) {
-  .mbua-wrapper {
-    width: 960px;
-    height: 590px;
   }
 }
-@media all and (max-width: 992px) {
+@media all and (max-width: 1099px) and (max-height: 676px) {
   .mbua-wrapper {
     width: 100vw;
     height: 100vh;
+  }
+  body img.mbua-slider-img {
+    height: 600px;
+    width: 600px;
+  }
+  body .slider-wrapper.large-slider {
+    width: 600px;
+  }
+  body .slider-wrapper {
+    position: fixed;
+    z-index: 100;
+    width: 300px;
+    height: 600px;
+  }
+  body #mbua-first-column {
+    width: 470px;
+  }
+  body .title {
+    font-size: 1.1rem;
+  }
+
+  body #slider-counter {
+    font-size: 1.2em;
+  }
+  body #main-menu li {
+    margin-right: 20px;
+  }
+  body #ProfilesMenu {
+    width: 258px;
+  }
+  body #ProfilesMenu li a {
+    font-size: 0.85em;
+  }
+  body #Feed ul {
+    bottom: 30px;
+    width: 258px;
+    margin-bottom: 0px;
+    padding-top: 10px;
+  }
+  body #contact-map {
+    margin: 20px 0px;
+    height: 258px;
+    width: 258px;
+  }
+  body p.pad-right-125 {
+    padding-right: 50px;
+  }
+  body .App {
+    font-size: 0.8em;
+  }
+  body .mbua-adress-card {
+    font-size: 1.4em;
   }
 }
